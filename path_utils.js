@@ -10,11 +10,10 @@ exports.PathObject = () => {
     pathObject['app'] = getApp(pathObject.relativePath)
     pathObject['pathToFile'] = pathObject['relativePath'].replace(pathObject.file, "").replace(pathObject.app, "") + "/"
     pathObject['tests'] = 'tests/'
-    pathObject['fullTestPath'] = getFullTestPath(utils.getSettings(), pathObject)
 
     return pathObject
 }
-const getFullTestPath = (settings, pathObject) => {
+exports.getFullTestPath = (settings, pathObject) => {
     const testPath = generateTestPath(settings, pathObject);
     if (!settings.CreateFromFileName && !(createMigrationTest(pathObject, settings))) {
         let highlight = utils.getSelectedText();

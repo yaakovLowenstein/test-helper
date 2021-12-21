@@ -18,7 +18,7 @@ function activate(context) {
 			return false
 		}
 
-		var fullTestPath = pathObject.fullTestPath
+		var fullTestPath = Path.getFullTestPath(settings, pathObject)
 
 		// Only execute if good test path
 		if (fullTestPath) {
