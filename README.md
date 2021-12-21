@@ -21,13 +21,13 @@ This extension provides help for testing.
            The test file would be 'rectangle/test_get_width.py'
 
 
- - **TestFileStructure**
+ - **Test File Structure**
  
    * Currently there are 2 options. This is the location the test file will be placed. 
      (If there are other file structures needed, create a PR or an issue on github)
 
 
- - **MigrationsCreateFromFileName**
+ - **Migrations Create From File Name**
  
    * If True will always create tests for migrations using the file name whether or not there is text highlighted.
 
@@ -40,7 +40,20 @@ How to use:
 
 ## Run test
 
-#### Runs test of selected test name or of entire file.
+### Runs test of selected test name or of entire file.
+
+#### Settings
+    
+![Settings](/images/runTestsSettings.png)
+
+- **Run Test Command**
+ 
+   * The command used to run your tests (i.e. if you are using a container would need to give path to run the tests)
+
+
+ - **Run Test In Watch Mode**
+ 
+   * If True will always run the tests in watch mode (if you have that configured). If False will not run in watch mode.
 
 How to use:
 1) To run a single test, select the name of a test
@@ -48,16 +61,3 @@ How to use:
 2) Hit ctrl+alt+r
 3) voile!
 
-
-# Known Issues
-
-- Will not work for migrations
-- Only works with file structure of appName/tests/path.../filename.py
-- Only works for python files
-- Run test does not allow you to define how you run tests. i.e pytest ... 
-
-# Future Releases
-
-Will make more dynamic.
-
-Will generate tests when cursor in class/function not just when highlight the name.
