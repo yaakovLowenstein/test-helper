@@ -53,11 +53,6 @@
 			{
 				"title": "Test Helper",
 				"properties": {
-					"test-creator.CreateTests.CreateFromFileName": {
-						"type": "boolean",
-						"default": false,
-						"description": "Create tests from the file name."
-					},
 					"test-creator.CreateTests.TestFileStructure": {
 						"type": "string",
 						"enum": [
@@ -67,20 +62,10 @@
 						"default": "app/tests/pathToFile/file.py",
 						"description": "Defines what your file structure for tests is."
 					},
-					"test-creator.CreateTests.MigrationsCreateFromFileName": {
-						"type": "boolean",
-						"default": true,
-						"description": "Always create tests from the file name for migrations."
-					},
 					"test-creator.RunTests.RunTestCommand": {
 						"type": "string",
-						"default": "dm test",
+						"default": "dm test -w",
 						"description": "Defines your command for running tests."
-					},
-					"test-creator.RunTests.RunTestInWatchMode": {
-						"type": "boolean",
-						"default": true,
-						"description": "Run tests in watch mode."
 					}
 				}
 			}

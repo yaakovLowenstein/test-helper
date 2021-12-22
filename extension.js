@@ -59,16 +59,15 @@ function activate(context) {
 			}
 			let highlight = utils.getSelectedText()
 			let terminal = vscode.window.createTerminal()
-			let runInWatchMode = settings.RunTestInWatchMode ? " -w" : ""
 
 
 			// If there is a selected test run that test
 			if (highlight.startsWith("test")) {
-				terminal.sendText(`${settings.RunTestCommand} ${path}::${highlight}${runInWatchMode}`)
+				terminal.sendText(`${settings.RunTestCommand} ${path}::${highlight}`)
 			}
 			// If no selected text, run all tests in file 
 			else {
-				terminal.sendText(`${settings.RunTestCommand} ${path}${runInWatchMode}`)
+				terminal.sendText(`${settings.RunTestCommand} ${path}`)
 			}
 
 

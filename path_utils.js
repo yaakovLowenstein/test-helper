@@ -15,19 +15,15 @@ exports.PathObject = () => {
 }
 exports.getFullTestPath = (settings, pathObject) => {
     const testPath = generateTestPath(settings, pathObject);
-    if (!settings.CreateFromFileName && !(createMigrationTest(pathObject, settings))) {
-        let highlight = utils.getSelectedText();
-        if (highlight) {
-            let filename = generateTestFileName(highlight);
-            return `${pathObject.workspace}/${utils.removePyFromFileName(testPath)}/${filename}`;
-        }
+    const highlight = utils.getSelectedText();
+    if (highlight) {
+        let filename = generateTestFileName(highlight);
+        return `${pathObject.workspace}/${utils.removePyFromFileName(testPath)}/${filename}`;
     }
     else {
         let filename = generateTestFileName(pathObject.file);
         return `${pathObject.workspace}/tests/${pathObject.pathToFile}/${utils.removePyFromFileName(filename)}`;
     }
-
-    return ''
 }
 const createMigrationTest = (pathObject, settings) => {
     // If MigrationsCreateFromFileName is True and it is a migration create test file from file name.
