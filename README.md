@@ -31,7 +31,7 @@ How to use:
 3. Hit ctrl+shift+t
 4. voile!
 
-## Run test
+## Command: Run test
 
 ### Runs test of selected test name or of entire file.
 
